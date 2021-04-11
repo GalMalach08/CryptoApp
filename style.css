@@ -1,0 +1,322 @@
+body {
+    background-image: url(images/background2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* =======================================
+                Nav-Bar
+==========================================*/
+
+#title-img {
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+}
+
+.nav-item {
+    margin: 0px 5px;
+}
+
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+
+/* =======================================
+               HeadLine
+==========================================*/
+
+.main-page-header {
+    display: flex;
+    justify-content: center;
+    color: rgb(232, 232, 232);
+    margin: 20px 0px 30px;
+    font-family: 'Ultra', serif;
+}
+
+
+/* =======================================
+               Cards
+==========================================*/
+
+.coin-card {
+    background-color: rgba(18, 17, 17, 0.859);
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    min-height: 195px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.card-body {
+    min-height: 237px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#more-info-btn {
+    margin: 10px;
+    display: flex;
+    margin-left: 100px;
+}
+
+.more-info-card {
+    color: white;
+    background-color: rgba(18, 17, 17, 1.2);
+    margin: 10px;
+    text-align: left;
+    min-height: 212px;
+}
+
+.more-info-paragraph {
+    margin: 8px 1px 8px 8px;
+    letter-spacing: 1px;
+}
+
+#more-info-img {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card-title {
+    display: inline;
+    letter-spacing: 1px;
+}
+
+.card-title-img {
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* =======================================
+                Spinner
+==========================================*/
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#spinner:not([hidden]) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+#spinner::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 2px double grey;
+    border-top: 3px double white;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =======================================
+                Search-Input
+==========================================*/
+
+#search-input-img {
+    cursor: pointer;
+}
+
+#search-span {
+    color: white;
+    margin-right: 15px;
+}
+
+
+/* =======================================
+               Modal-Window
+==========================================*/
+
+.coin-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    padding: 10px;
+}
+
+.modal-content-span {
+    margin-left: 10px;
+}
+
+.modal-content-span img {
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+#coin-modal-content {
+    padding: 0px;
+}
+
+#coin-modal {
+    color: lightgrey
+}
+
+
+/* =======================================
+               About Page
+==========================================*/
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.40);
+    color: white;
+    font-weight: 600;
+    border: 4px solid black;
+    box-shadow: 1px -5px 31px 5px rgba(0, 0, 0, 0.85);
+}
+
+
+/* =======================================
+               Check-Box
+==========================================*/
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 59px;
+    height: 38px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 29px;
+    height: 29px;
+    background: #fff;
+    border-radius: 120px;
+    transition: 0.1s;
+}
+
+input:checked+label {
+    background: rgba(33, 37, 44, 1.2);
+}
+
+input:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 60px;
+}
+
+.star {
+    visibility: hidden;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 39px;
+    margin-bottom: 63px;
+}
+
+.star:before {
+    content: "\2606";
+    position: absolute;
+    visibility: visible;
+}
+
+.star:checked:before {
+    content: "\2605";
+    position: absolute;
+    color: rgb(251, 176, 59)
+}
+
+
+/* =======================================
+                Favorite-Page
+==========================================*/
+
+.alert-card {
+    display: flex;
+    justify-content: center;
+}
+
+.no-coin-selected-card {
+    margin: auto;
+}
+
+.alert-card-content {
+    background-color: rgba(0, 0, 0, 0.40);
+    color: white;
+    font-weight: 600;
+    border: 4px solid black;
+    box-shadow: 1px -5px 31px 5px rgba(0, 0, 0, 0.85);
+}
+
+.alert-card-content a,
+.alert-card-content a {
+    color: white;
+    font-weight: bold;
+}
+
+.alert-card-content a:hover {
+    color: wheat;
+}
+
+
+/* =======================================
+                Chart
+==========================================*/
+
+#chartContainer {
+    margin: 0px 10px;
+}

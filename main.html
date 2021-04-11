@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Jquery Link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--Google Fonts Link-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Css Link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- logo img -->
+    <link rel="shortcut icon" href="images/logo.jpg">
+    <title>CryptoApp | Gal Malach</title>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <div class="top">
+    </div>
+    <div class="container-fluid">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand mr-5"> <img src="images/bitcoinlogo.png" id="title-img" /></a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mynavbar">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="navbar-collapse collapse col-9" id="mynavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" onclick="showCoins()" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="favorite" onclick="showFavorite()" href="#">Favorite Coins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="live" href="#" onclick="fetchLiveRosterPage()">Live Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="about" onclick="fetchAboutPage()" href="#">About</a>
+                    </li>
+                </ul>
+                <span id='search-span'></span>
+                <div class="col-12 col-lg-3 input-group border rounded bg-white search-div">
+                    <input type="text" class="form-control border-white" id="search-input" placeholder="Search by name">
+                    <button class="bg-white" style="border:0 solid"><img id="search-input-img" onclick="search()" src="images/glass.png"></button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- spinner -->
+    <div hidden id='spinner'></div>
+    <div hidden id='overlay'></div>
+
+    <!-- modal window -->
+    <div class='modal fade' id='coin-modal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog modal-dialog-centered' role='document'>
+            <div class='modal-content bg-dark'>
+                <div class='modal-header'>
+                    <h5 class='modal-title' id='exampleModalLongTitle'>The maximum choice is 5 coins. In order to add the selected coin, one of the coins below must be unmarked:</h5>
+                    <button type='button' class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span> </button>
+                </div>
+                <div class='modal-body' id='coin-modal-content'>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Continue with the current selection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--main container-->
+    <div class='container main'>
+        <div class='row main-page-header'>
+            <h1 id='headline'></h1>
+        </div>
+        <div class='row' id='coin-container'>
+
+        </div>
+    </div>
+
+    <!-- Js file -->
+    <script src="script.js"></script>
+    <!-- Canvas JS -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>
